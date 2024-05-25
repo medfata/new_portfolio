@@ -19,7 +19,7 @@ export default function Portfolio() {
 
     return (
         <main className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20">
-            <section className="grid gap-8 md:grid-cols-[200px_1fr] items-center">
+            <section className="grid gap-8 md:grid-cols-[200px_1fr] items-start">
                 <div className="flex justify-center">
                     <img
                         alt="Profile"
@@ -38,6 +38,9 @@ export default function Portfolio() {
                         <h1 className="text-3xl font-bold">Mohamed Fatta</h1>
                         <p className="text-gray-500 dark:text-gray-400">
                             Full Stack Developer | Typescript | Java | AWS
+                        </p>
+                        <p className="inline-flex items-center gap-2  text-gray-700 dark:text-gray-400">
+                            <GmailIcon className="h-5 w-5" />med3fata@gmail.com / <PhoneIcon className='h5 w-5'/>+212638653350
                         </p>
                     </div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -122,7 +125,7 @@ export default function Portfolio() {
                                     I played a key role in enhancing and optimizing a system used by Sky operators to manage and resolve client issues related to internet and CPEs,
                                     ensuring seamless internet connection and streaming services for customers. My contributions included:
                                 </p>
-                                <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
                                     <li>
                                         <CheckIcon className="mr-2 inline-block h-4 w-4" />
                                         Implemented an AWS serverless solution to handle the Users notifications using WEBSOCKETS.
@@ -202,7 +205,7 @@ export default function Portfolio() {
                                     Development of a multi tenant Saas platform for deploying - monitoring - scaling applications
                                     using cloud technologies (aws) :
                                 </p>
-                                <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-400">
                                     <li>
                                         <CheckIcon className="mr-2 inline-block h-4 w-4" />
                                         Implemented a solution for separating Data by organisation (multi tenancy).
@@ -275,31 +278,31 @@ export default function Portfolio() {
                 <div>
                     <h2 className="text-2xl font-bold">Education</h2>
                     <div className="grid grid-cols-[80px_1fr] gap-4 pt-5">
-                            <div className="flex justify-center">
-                                <a href="https://www.linkedin.com/company/ofpptpageofficielle/" target="_blank">
-                                    <img
-                                        alt="Ofppt Logo"
-                                        className="rounded-full h-min border #1e293b"
-                                        height={80}
-                                        src="/ofppt_logo.png"
-                                        width={80}
-                                    />
-                                </a>
-                            </div>
-                            <div className="grid gap-2">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <h3 className="text-lg font-semibold">Software Development Technician</h3>
-                                        <p className="text-sm text-gray-700 dark:text-gray-400">Ofppt Ista </p>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">2017 - 2019 · 2 yr</p>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">Agadir Ait Melloul · Morocco</p>
-                                    </div>
-                                </div>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    Graduated with a focus on web development and software engineering. 
-                                </p>
-                            </div>
+                        <div className="flex justify-center">
+                            <a href="https://www.linkedin.com/company/ofpptpageofficielle/" target="_blank">
+                                <img
+                                    alt="Ofppt Logo"
+                                    className="rounded-full h-min border #1e293b"
+                                    height={80}
+                                    src="/ofppt_logo.png"
+                                    width={80}
+                                />
+                            </a>
                         </div>
+                        <div className="grid gap-2">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h3 className="text-lg font-semibold">Software Development Technician</h3>
+                                    <p className="text-sm text-gray-700 dark:text-gray-400">Ofppt Ista </p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">2017 - 2019 · 2 yr</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400">Agadir Ait Melloul · Morocco</p>
+                                </div>
+                            </div>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                                Graduated with a focus on web development and software engineering.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
             {/*
@@ -543,4 +546,26 @@ function AwsIcon(props: React.SVGProps<SVGSVGElement>) {
 
         </svg>
     )
+}
+
+function GmailIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg {...props} viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 11.9556C2 8.47078 2 6.7284 2.67818 5.39739C3.27473 4.22661 4.22661 3.27473 5.39739 2.67818C6.7284 2 8.47078 2 11.9556 2H20.0444C23.5292 2 25.2716 2 26.6026 2.67818C27.7734 3.27473 28.7253 4.22661 29.3218 5.39739C30 6.7284 30 8.47078 30 11.9556V20.0444C30 23.5292 30 25.2716 29.3218 26.6026C28.7253 27.7734 27.7734 28.7253 26.6026 29.3218C25.2716 30 23.5292 30 20.0444 30H11.9556C8.47078 30 6.7284 30 5.39739 29.3218C4.22661 28.7253 3.27473 27.7734 2.67818 26.6026C2 25.2716 2 23.5292 2 20.0444V11.9556Z" fill="white" />
+            <path d="M22.0515 8.52295L16.0644 13.1954L9.94043 8.52295V8.52421L9.94783 8.53053V15.0732L15.9954 19.8466L22.0515 15.2575V8.52295Z" fill="#EA4335" />
+            <path d="M23.6231 7.38639L22.0508 8.52292V15.2575L26.9983 11.459V9.17074C26.9983 9.17074 26.3978 5.90258 23.6231 7.38639Z" fill="#FBBC05" />
+            <path d="M22.0508 15.2575V23.9924H25.8428C25.8428 23.9924 26.9219 23.8813 26.9995 22.6513V11.459L22.0508 15.2575Z" fill="#34A853" />
+            <path d="M9.94811 24.0001V15.0732L9.94043 15.0669L9.94811 24.0001Z" fill="#C5221F" />
+            <path d="M9.94014 8.52404L8.37646 7.39382C5.60179 5.91001 5 9.17692 5 9.17692V11.4651L9.94014 15.0667V8.52404Z" fill="#C5221F" />
+            <path d="M9.94043 8.52441V15.0671L9.94811 15.0734V8.53073L9.94043 8.52441Z" fill="#C5221F" />
+            <path d="M5 11.4668V22.6591C5.07646 23.8904 6.15673 24.0003 6.15673 24.0003H9.94877L9.94014 15.0671L5 11.4668Z" fill="#4285F4" />
+        </svg>
+    )
+}
+
+function PhoneIcon(props: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg {...props} viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>)
 }
