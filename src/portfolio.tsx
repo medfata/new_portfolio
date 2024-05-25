@@ -25,7 +25,7 @@ export default function Portfolio() {
                         alt="Profile"
                         className="rounded-full"
                         height={200}
-                        src={`${import.meta.env.BASE_URL}/face_image.jpeg`}
+                        src="/face_image.jpeg"
                         style={{
                             aspectRatio: '200/200',
                             objectFit: 'cover',
@@ -104,7 +104,7 @@ export default function Portfolio() {
                                         alt="Ntt_Data Morocco Logo"
                                         className="rounded-full h-min #1e293b"
                                         height={80}
-                                        src={`${import.meta.env.BASE_URL}/ntt_data_morocco_logo.jpeg`}
+                                        src="/ntt_data_morocco_logo.jpeg"
                                         width={80}
                                     />
                                 </a>
@@ -184,7 +184,7 @@ export default function Portfolio() {
                                         alt="Fy Computing Logo"
                                         className="rounded-full h-min border #1e293b"
                                         height={80}
-                                        src={`${import.meta.env.BASE_URL}/fycomputing_logo.jpeg`}
+                                        src="/fycomputing_logo.jpeg"
                                         width={80}
                                     />
                                 </a>
@@ -281,7 +281,7 @@ export default function Portfolio() {
                                         alt="Ofppt Logo"
                                         className="rounded-full h-min border #1e293b"
                                         height={80}
-                                        src={`${import.meta.env.BASE_URL}/ofppt_logo.png`}
+                                        src="/ofppt_logo.png"
                                         width={80}
                                     />
                                 </a>
