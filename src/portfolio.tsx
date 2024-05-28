@@ -326,7 +326,7 @@ export default function Portfolio() {
             </section>
             <section className="mt-12 space-y-8">
                 <div>
-                    <h2 className="text-2xl font-bold">Personal Projects</h2>
+                    <h2 className="text-2xl font-bold dark:text-white">Personal Projects</h2>
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="rounded-lg overflow-hidden shadow-md dark:shadow-none">
                             <img
