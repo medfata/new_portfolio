@@ -326,6 +326,25 @@ export default function Portfolio() {
             </section>
             <section className="mt-12 space-y-8">
                 <div>
+                    <h2 className="text-2xl font-bold dark:text-white">Languages</h2>
+                    <div className="mt-4 space-y-2">
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-700 dark:text-white">English</span>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">Professional Working Proficiency</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-700 dark:text-white">French</span>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">Medium | Have Conversations | Writing</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-700 dark:text-white">Arabic</span>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">Native</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="mt-12 space-y-8">
+                <div>
                     <h2 className="text-2xl font-bold dark:text-white">Projects</h2>
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="rounded-lg overflow-hidden shadow-md dark:shadow-none">
@@ -377,25 +396,6 @@ export default function Portfolio() {
                                 </button>
                             </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="mt-12 space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold dark:text-white">Languages</h2>
-                    <div className="mt-4 space-y-2">
-                        <div className="flex justify-between">
-                            <span className="text-sm text-gray-700 dark:text-white">English</span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">Professional Working Proficiency</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-sm text-gray-700 dark:text-white">French</span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">Medium | Have Conversations | Writing</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-sm text-gray-700 dark:text-white">Arabic</span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">Native</span>
                         </div>
                     </div>
                 </div>
