@@ -381,6 +381,25 @@ export default function Portfolio() {
                     </div>
                 </div>
             </section>
+            <section className="mt-12 space-y-8">
+                <div>
+                    <h2 className="text-2xl font-bold dark:text-white">Languages</h2>
+                    <div className="mt-4 space-y-2">
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-700 dark:text-white">English</span>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">Professional Working Proficiency</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-700 dark:text-white">French</span>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">Medium | Have Conversations | Writing</span>
+                        </div>
+                        <div className="flex justify-between">
+                            <span className="text-sm text-gray-700 dark:text-white">Arabic</span>
+                            <span className="text-sm text-gray-500 dark:text-gray-400">Native</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div className="fixed bottom-4 right-4 z-50">
                 <button
                     onClick={toggleDarkMode}
