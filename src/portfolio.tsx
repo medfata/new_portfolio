@@ -37,11 +37,13 @@ export default function Portfolio() {
         window.open(url, "_blank");
     }
     return (
-        <main className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20">
-            <section className="grid gap-8 md:grid-cols-[200px_1fr] items-start">
+        // Use article for better semantic structure
+        <article className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20">
+            {/* Profile Section - Include target keywords */}
+            <section aria-label="Mohamed Fatta Portfolio - About" className="grid gap-8 md:grid-cols-[200px_1fr] items-start">
                 <div className="flex justify-center">
                     <img
-                        alt="Profile"
+                        alt="Mohamed Fatta (Med Fatta) - Software Developer from Morocco"
                         className="rounded-full border border-gray-300"
                         height={200}
                         src="/profile_img.png"
@@ -50,260 +52,188 @@ export default function Portfolio() {
                             objectFit: 'cover',
                         }}
                         width={200}
+                        loading="eager"
                     />
                 </div>
                 <div className="space-y-4">
-                    <div className="space-y-2">
-                        <h1 className="text-3xl font-bold dark:text-white">Mohamed Fatta</h1>
+                    <header className="space-y-2">
+                        {/* Include both name variations */}
+                        <h1 className="text-3xl font-bold dark:text-white">
+                            Mohamed Fatta (Med Fatta)
+                        </h1>
                         <p className="text-gray-500 dark:text-gray-400">
-                            Full Stack Developer | Typescript | Java | AWS
+                            Senior Software Developer | Morocco
                         </p>
-                        <p className="inline-flex items-center gap-2  text-gray-700 dark:text-gray-400">
-                            <GmailIcon className="h-5 w-5" />med3fata@gmail.com / <PhoneIcon className='h5 w-5 stroke-gray-700 dark:stroke-white'/>+212638653350
-                        </p>
-                    </div>
+                        <address className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-400 not-italic">
+                            <GmailIcon className="h-5 w-5" aria-hidden="true" />
+                            <a href="mailto:med3fata@gmail.com" className="hover:text-blue-600" title="Email Mohamed Fatta">
+                                med3fata@gmail.com
+                            </a>
+                            <PhoneIcon className='h5 w-5 stroke-gray-700 dark:stroke-white' aria-hidden="true"/>
+                            <a href="tel:+212638653350" className="hover:text-blue-600" title="Call Mohamed Fatta">
+                                +212638653350
+                            </a>
+                        </address>
+                    </header>
+                    {/* Enhanced bio with target keywords */}
                     <p className="text-md text-gray-500 dark:text-gray-400">
-                        I am a passionate Full Stack Developer with extensive experience in building diverse systems and web applications across various domains, including cloud computing, art, and streaming.
-                        My strong technical background spans JavaScript, Angular, Node.js, Java, MongoDB, and PostgreSQL.
-                        I am dedicated to solving real-world problems and continuously expanding my knowledge and skills.
+                        Welcome to Mohamed Fatta's portfolio. As a Software Developer based in Morocco, 
+                        I specialize in building robust web applications and cloud solutions. Known professionally 
+                        as both Mohamed Fatta and Med Fatta, I bring extensive experience in JavaScript, Angular, 
+                        Node.js, Java, MongoDB, and PostgreSQL to every project.
                     </p>
-                    <div className="flex flex-wrap gap-2">
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <AngularIcon className="h-4 w-4" />
-                            Angular
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                            <NestjsIcon className="h-4 w-4" />
-                            NestJs
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <TsIcon className="h-4 w-4" />
-                            Ts
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <JavaIcon className="h-4 w-4" />
-                            Java
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <MongoDbIcon className="h-4 w-4" />
-                            MongoDb
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <PostgresqlIcon className="h-4 w-4" />
-                            Postgres
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <PythonIcon className="h-4 w-4" />
-                            Python
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            <AwsIcon className="h-4 w-4" />
-                            AWS
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            Lambda Function
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            DynamoDb
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            SQS
-                        </div>
-                        <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                            SNS
-                        </div>
-                    </div>
+                    
+                    {/* Skills section */}
+                    <nav aria-label="Mohamed Fatta's Technical Skills" className="flex flex-wrap gap-2">
+                        <ul className="flex flex-wrap gap-2">
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <AngularIcon className="h-4 w-4" aria-hidden="true" />
+                                Angular
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <NestjsIcon className="h-4 w-4" aria-hidden="true" />
+                                NestJs
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <TsIcon className="h-4 w-4" aria-hidden="true" />
+                                Ts
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <JavaIcon className="h-4 w-4" aria-hidden="true" />
+                                Java
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <MongoDbIcon className="h-4 w-4" aria-hidden="true" />
+                                MongoDb
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <PostgresqlIcon className="h-4 w-4" aria-hidden="true" />
+                                Postgres
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <PythonIcon className="h-4 w-4" aria-hidden="true" />
+                                Python
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                <AwsIcon className="h-4 w-4" aria-hidden="true" />
+                                AWS
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                Lambda Function
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                DynamoDb
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                SQS
+                            </li>
+                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
+                                SNS
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </section>
-            <section className="mt-12 space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold dark:text-white">Experience</h2>
-                    <div className="mt-4 space-y-4">
-                        <div className="grid grid-cols-[80px_1fr] gap-4">
-                            <div className="flex justify-center">
-                                <a href="https://www.linkedin.com/company/94841697/" target="_blank">
-                                    <img
-                                        alt="Ntt_Data Morocco Logo"
-                                        className="rounded-full h-min #1e293b"
-                                        height={80}
-                                        src="/ntt_data_morocco_logo.jpeg"
-                                        width={80}
-                                    />
-                                </a>
-                            </div>
-                            <div className="grid gap-2">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <h3 className="text-lg font-semibold dark:text-white">Software Engineer</h3>
-                                        <p className="text-sm text-gray-700 dark:text-white">NTT DATA Morocco · Full-time</p>
-                                        <p className="text-sm text-gray-500 dark:text-white">Feb 2023 - Present · 1 yr 4 mos</p>
-                                        <p className="text-sm text-gray-500 dark:text-white">Morocco · Remote</p>
-                                    </div>
-                                </div>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    I played a key role in enhancing and optimizing a system used by Sky operators to manage and resolve client issues related to internet and CPEs,
-                                    ensuring seamless internet connection and streaming services for customers. My contributions included:
-                                </p>
-                                <ul className="space-y-2 text-sm text-gray-700 dark:text-white">
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Implemented an AWS serverless solution to handle the Users notifications using WEBSOCKETS.
-                                    </li>
 
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Debugged Aws Lambda Functions.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Created Unit tests for existing lambda functions, using Pytest and mock.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Reduced aws lambda functions cold starts and execution time.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Understanding and Following Event driven architecture.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Utilised lambda power tuning tool to reduce cost and increase performance.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Refactored a custom Engine Evaluator in Python,used as an AWS lambda Layer for multiple Lambda functions.
-                                    </li>
-                                </ul>
-                                <div className="flex flex-wrap gap-2 mt-2">
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        <PythonIcon className="h-4 w-4" />
-                                        Python
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        <AwsIcon className="h-4 w-4" />
-                                        AWS
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        Lambda Function
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        DynamoDb
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        SQS
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        SNS
-                                    </div>
+            {/* Experience Section */}
+            <section aria-label="Mohamed Fatta's Work Experience" className="mt-12 space-y-8">
+                <h2 className="text-2xl font-bold dark:text-white">Professional Experience</h2>
+                <div className="mt-4 space-y-4">
+                    {/* Add more semantic structure to job entries */}
+                    <article className="grid grid-cols-[80px_1fr] gap-4">
+                        <div className="flex justify-center">
+                            <a 
+                                href="https://www.linkedin.com/company/94841697/" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="NTT Data Morocco LinkedIn Page"
+                            >
+                                <img
+                                    alt="NTT Data Morocco Company Logo"
+                                    className="rounded-full h-min"
+                                    height={80}
+                                    src="/ntt_data_morocco_logo.jpeg"
+                                    width={80}
+                                    loading="lazy"
+                                />
+                            </a>
+                        </div>
+                        <div className="grid gap-2">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h3 className="text-lg font-semibold dark:text-white">Software Engineer</h3>
+                                    <p className="text-sm text-gray-700 dark:text-white">NTT DATA Morocco · Full-time</p>
+                                    <p className="text-sm text-gray-500 dark:text-white">Feb 2023 - Present · 1 yr 4 mos</p>
+                                    <p className="text-sm text-gray-500 dark:text-white">Morocco · Remote</p>
+                                </div>
+                            </div>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
+                                I played a key role in enhancing and optimizing a system used by Sky operators to manage and resolve client issues related to internet and CPEs,
+                                ensuring seamless internet connection and streaming services for customers. My contributions included:
+                            </p>
+                            <ul className="space-y-2 text-sm text-gray-700 dark:text-white">
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Implemented an AWS serverless solution to handle the Users notifications using WEBSOCKETS.
+                                </li>
+
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Debugged Aws Lambda Functions.
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Created Unit tests for existing lambda functions, using Pytest and mock.
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Reduced aws lambda functions cold starts and execution time.
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Understanding and Following Event driven architecture.
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Utilised lambda power tuning tool to reduce cost and increase performance.
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Refactored a custom Engine Evaluator in Python,used as an AWS lambda Layer for multiple Lambda functions.
+                                </li>
+                            </ul>
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    <PythonIcon className="h-4 w-4" />
+                                    Python
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    <AwsIcon className="h-4 w-4" />
+                                    AWS
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    Lambda Function
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    DynamoDb
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    SQS
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    SNS
                                 </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-[80px_1fr] gap-4 pt-5">
-                            <div className="flex justify-center">
-                                <a href="https://www.linkedin.com/company/2907050/" target="_blank">
-                                    <img
-                                        alt="Fy Computing Logo"
-                                        className="rounded-full h-min border #1e293b"
-                                        height={80}
-                                        src="/fycomputing_logo.jpeg"
-                                        width={80}
-                                    />
-                                </a>
-                            </div>
-                            <div className="grid gap-2">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <h3 className="text-lg font-semibold dark:text-white">Software Developer</h3>
-                                        <p className="text-sm text-gray-700 dark:text-white">FY COMPUTING · Full-time</p>
-                                        <p className="text-sm text-gray-500 dark:text-white">Oct 2021 - Mar 2023 · 1 yr 6 mos</p>
-                                        <p className="text-sm text-gray-500 dark:text-white">Rabat, Rabat-Salé-Kenitra, Morocco · Remote</p>
-                                    </div>
-                                </div>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                    Development of a multi tenant Saas platform for deploying - monitoring - scaling applications
-                                    using cloud technologies (aws) :
-                                </p>
-                                <ul className="space-y-2 text-sm text-gray-700 dark:text-white">
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Implemented a solution for separating Data by organisation (multi tenancy).
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Implemented an IAM solution to add fine grained authorization rules.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                        Secure secrets by using hashicorp Vault.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                        Implemented a custom Keycloak authentication flow.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                        Automated updating Keycloak authorization policies based on realm roles.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                        Implemented e2e test cases for deferent rest apis using robot framework.
-                                    </li>
-                                    <li>
-                                        <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                        Perform Code Reviews - Provide Constructive Feedback - Identify Issues
-                                    </li>
-                                    <li>
-                                        <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                        Implemented a generic REST API for managing files across different cloud providers and local disks, based on configurable settings.
-                                    </li>
-                                </ul>
-                                <div className="flex flex-wrap gap-2 mt-2">
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        <AngularIcon className="h-4 w-4" />
-                                        Angular
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        <NestjsIcon className="h-4 w-4" />
-                                        NestJs
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        <TsIcon className="h-4 w-4" />
-                                        Ts
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        <MongoDbIcon className="h-4 w-4" />
-                                        MongoDb
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        Keycloak
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        AWS S3
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        Robot Framework
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                        Docker
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="mt-12 space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold dark:text-white">Education</h2>
+                    </article>
                     <div className="grid grid-cols-[80px_1fr] gap-4 pt-5">
                         <div className="flex justify-center">
-                            <a href="https://www.linkedin.com/company/ofpptpageofficielle/" target="_blank">
+                            <a href="https://www.linkedin.com/company/2907050/" target="_blank">
                                 <img
-                                    alt="Ofppt Logo"
+                                    alt="Fy Computing Logo"
                                     className="rounded-full h-min border #1e293b"
                                     height={80}
-                                    src="/ofppt_logo.png"
+                                    src="/fycomputing_logo.jpeg"
                                     width={80}
                                 />
                             </a>
@@ -311,104 +241,164 @@ export default function Portfolio() {
                         <div className="grid gap-2">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <h3 className="text-lg font-semibold dark:text-white">Software Development Technician</h3>
-                                    <p className="text-sm text-gray-700 dark:text-white">Ofppt Ista </p>
-                                    <p className="text-sm text-gray-500 dark:text-white">2017 - 2019 · 2 yr</p>
-                                    <p className="text-sm text-gray-500 dark:text-white">Agadir Ait Melloul · Morocco</p>
+                                    <h3 className="text-lg font-semibold dark:text-white">Software Developer</h3>
+                                    <p className="text-sm text-gray-700 dark:text-white">FY COMPUTING · Full-time</p>
+                                    <p className="text-sm text-gray-500 dark:text-white">Oct 2021 - Mar 2023 · 1 yr 6 mos</p>
+                                    <p className="text-sm text-gray-500 dark:text-white">Rabat, Rabat-Salé-Kenitra, Morocco · Remote</p>
                                 </div>
                             </div>
                             <p className="text-sm text-gray-500 dark:text-gray-400">
-                                Graduated with a focus on web development and software engineering.
+                                Development of a multi tenant Saas platform for deploying - monitoring - scaling applications
+                                using cloud technologies (aws) :
                             </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="mt-12 space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold dark:text-white">Languages</h2>
-                    <div className="mt-4 space-y-2">
-                        <div className="flex justify-between">
-                            <span className="text-sm text-gray-700 dark:text-white">English</span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">Professional Working Proficiency</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-sm text-gray-700 dark:text-white">French</span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">Medium | Have Conversations | Writing</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-sm text-gray-700 dark:text-white">Arabic</span>
-                            <span className="text-sm text-gray-500 dark:text-gray-400">Native</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="mt-12 space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold dark:text-white">Projects</h2>
-                    <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="rounded-lg overflow-hidden shadow-md dark:shadow-none">
-                            <img
-                                alt="Project 1"
-                                className="w-full h-48 object-cover"
-                                height={400}
-                                src="/emailNotifyer.png"
-                                style={{
-                                    aspectRatio: '600/400',
-                                    objectFit: 'cover',
-                                }}
-                                width={600}
-                            />
-                            <div className="p-4 bg-white dark:bg-gray-950">
-                                <h3 className="text-lg font-semibold dark:text-white">EmailNotifyer</h3>
-                                <div className="flex flex-wrap gap-2 mt-2 text-xs ">
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                        <PythonIcon className="h-4 w-4" />
-                                        Python
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                        AWS Api Gateway
-                                    </div>
-                                     <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                        Lambda Function
-                                    </div>
-                                     <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                        S3
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                        DynamoDb
-                                    </div>
-                                    <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                        Amazon SES
-                                    </div>
+                            <ul className="space-y-2 text-sm text-gray-700 dark:text-white">
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Implemented a solution for separating Data by organisation (multi tenancy).
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Implemented an IAM solution to add fine grained authorization rules.
+                                </li>
+                                <li>
+                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
+                                    Secure secrets by using hashicorp Vault.
+                                </li>
+                                <li>
+                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
+                                    Implemented a custom Keycloak authentication flow.
+                                </li>
+                                <li>
+                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
+                                    Automated updating Keycloak authorization policies based on realm roles.
+                                </li>
+                                <li>
+                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
+                                    Implemented e2e test cases for deferent rest apis using robot framework.
+                                </li>
+                                <li>
+                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
+                                    Perform Code Reviews - Provide Constructive Feedback - Identify Issues
+                                </li>
+                                <li>
+                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
+                                    Implemented a generic REST API for managing files across different cloud providers and local disks, based on configurable settings.
+                                </li>
+                            </ul>
+                            <div className="flex flex-wrap gap-2 mt-2">
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    <AngularIcon className="h-4 w-4" />
+                                    Angular
                                 </div>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                                    A serverless application to send emails based on AWS SES
-                                </p>
-                                <div className="w-full flex justify-end">
-                                <button
-                                onClick={() => navigateTo("https://github.com/medfata/emailNotifyer")} 
-                                type="button" 
-                                className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 ">
-                                    <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clipRule="evenodd"/>
-                                    </svg>
-                                </button>
-                            </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    <NestjsIcon className="h-4 w-4" />
+                                    NestJs
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    <TsIcon className="h-4 w-4" />
+                                    Ts
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    <MongoDbIcon className="h-4 w-4" />
+                                    MongoDb
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    Keycloak
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    AWS S3
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    Robot Framework
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                    Docker
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Projects Section - Add if not present */}
+            <section aria-label="Mohamed Fatta's Portfolio Projects" className="mt-12 space-y-8">
+                <h2 className="text-2xl font-bold dark:text-white">Portfolio Projects</h2>
+                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="rounded-lg overflow-hidden shadow-md dark:shadow-none">
+                        <img
+                            alt="Project 1"
+                            className="w-full h-48 object-cover"
+                            height={400}
+                            src="/emailNotifyer.png"
+                            style={{
+                                aspectRatio: '600/400',
+                                objectFit: 'cover',
+                            }}
+                            width={600}
+                        />
+                        <div className="p-4 bg-white dark:bg-gray-950">
+                            <h3 className="text-lg font-semibold dark:text-white">EmailNotifyer</h3>
+                            <div className="flex flex-wrap gap-2 mt-2 text-xs ">
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
+                                    <PythonIcon className="h-4 w-4" />
+                                    Python
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
+                                    AWS Api Gateway
+                                </div>
+                                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
+                                    Lambda Function
+                                </div>
+                                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
+                                    S3
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
+                                    DynamoDb
+                                </div>
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
+                                    Amazon SES
+                                </div>
+                            </div>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                                A serverless application to send emails based on AWS SES
+                            </p>
+                            <div className="w-full flex justify-end">
+                            <button
+                            onClick={() => navigateTo("https://github.com/medfata/emailNotifyer")} 
+                            type="button" 
+                            className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 ">
+                                <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clipRule="evenodd"/>
+                                </svg>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Location Section - Add to emphasize Morocco connection */}
+            <section aria-label="Location" className="mt-12">
+                <h2 className="text-2xl font-bold dark:text-white">Location</h2>
+                <p className="text-gray-500 dark:text-gray-400 mt-4">
+                    Based in Morocco, available for both local and international opportunities.
+                </p>
+            </section>
+
+            {/* Dark mode toggle */}
             <div className="fixed bottom-4 right-4 z-50">
                 <button
                     onClick={toggleDarkMode}
                     className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
+                    aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
                 >
-                    {darkMode ? <SunIcon className="h-6 w-6 dark:text-white" /> : <MoonIcon className="h-6 w-6" />}
+                    {darkMode ? 
+                        <SunIcon className="h-6 w-6 dark:text-white" aria-hidden="true" /> : 
+                        <MoonIcon className="h-6 w-6" aria-hidden="true" />
+                    }
                 </button>
             </div>
-        </main>
+        </article>
     );
 }
 
