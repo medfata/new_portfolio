@@ -77,7 +77,7 @@ export default function Portfolio() {
                     </header>
                     {/* Enhanced bio with target keywords */}
                     <p className="text-md text-gray-500 dark:text-gray-400">
-                        Welcome to Mohamed Fatta's portfolio. As a Software Developer based in Morocco, 
+                        As a Software Developer based in Morocco,
                         I specialize in building robust web applications and cloud solutions. Known professionally 
                         as both Mohamed Fatta and Med Fatta, I bring extensive experience in JavaScript, Angular, 
                         Node.js, Java, MongoDB, and PostgreSQL to every project.
