@@ -37,367 +37,514 @@ export default function Portfolio() {
         window.open(url, "_blank");
     }
     return (
-        // Use article for better semantic structure
-        <article className="w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20">
-            {/* Profile Section - Include target keywords */}
-            <section aria-label="Mohamed Fatta Portfolio - About" className="grid gap-8 md:grid-cols-[200px_1fr] items-start">
-                <div className="flex justify-center">
-                    <img
-                        alt="Mohamed Fatta (Med Fatta) - Software Developer from Morocco"
-                        className="rounded-full border border-gray-300"
-                        height={200}
-                        src="/profile_img.png"
-                        style={{
-                            aspectRatio: '200/200',
-                            objectFit: 'cover',
-                        }}
-                        width={200}
-                        loading="eager"
-                    />
+        <article className="min-h-screen bg-gray-50 dark:bg-gray-900">
+            {/* Header with dark mode toggle */}
+            <header className="fixed top-0 right-0 left-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b dark:border-gray-800">
+                <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-end">
+                    <button
+                        onClick={toggleDarkMode}
+                        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                    >
+                        {darkMode ? 
+                            <SunIcon className="h-5 w-5 dark:text-white" aria-hidden="true" /> : 
+                            <MoonIcon className="h-5 w-5" aria-hidden="true" />
+                        }
+                    </button>
                 </div>
-                <div className="space-y-4">
-                    <header className="space-y-2">
-                        {/* Include both name variations */}
-                        <h1 className="text-3xl font-bold dark:text-white">
-                            Mohamed Fatta (Med Fatta)
-                        </h1>
-                        <p className="text-gray-500 dark:text-gray-400">
-                            Senior Software Developer | Morocco
-                        </p>
-                        <address className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-400 not-italic">
-                            <GmailIcon className="h-5 w-5" aria-hidden="true" />
-                            <a href="mailto:med3fata@gmail.com" className="hover:text-blue-600" title="Email Mohamed Fatta">
-                                med3fata@gmail.com
-                            </a>
-                            <PhoneIcon className='h5 w-5 stroke-gray-700 dark:stroke-white' aria-hidden="true"/>
-                            <a href="tel:+212638653350" className="hover:text-blue-600" title="Call Mohamed Fatta">
-                                +212638653350
-                            </a>
-                        </address>
-                    </header>
-                    {/* Enhanced bio with target keywords */}
-                    <p className="text-md text-gray-500 dark:text-gray-400">
-                        Welcome to Mohamed Fatta's portfolio. As a Software Developer based in Morocco, 
-                        I specialize in building robust web applications and cloud solutions. Known professionally 
-                        as both Mohamed Fatta and Med Fatta, I bring extensive experience in JavaScript, Angular, 
-                        Node.js, Java, MongoDB, and PostgreSQL to every project.
-                    </p>
-                    
-                    {/* Skills section */}
-                    <nav aria-label="Mohamed Fatta's Technical Skills" className="flex flex-wrap gap-2">
-                        <ul className="flex flex-wrap gap-2">
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <AngularIcon className="h-4 w-4" aria-hidden="true" />
-                                Angular
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <NestjsIcon className="h-4 w-4" aria-hidden="true" />
-                                NestJs
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <TsIcon className="h-4 w-4" aria-hidden="true" />
-                                Ts
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <JavaIcon className="h-4 w-4" aria-hidden="true" />
-                                Java
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <MongoDbIcon className="h-4 w-4" aria-hidden="true" />
-                                MongoDb
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <PostgresqlIcon className="h-4 w-4" aria-hidden="true" />
-                                Postgres
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <PythonIcon className="h-4 w-4" aria-hidden="true" />
-                                Python
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                <AwsIcon className="h-4 w-4" aria-hidden="true" />
-                                AWS
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                Lambda Function
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                DynamoDb
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                SQS
-                            </li>
-                            <li className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium">
-                                SNS
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </section>
+            </header>
 
-            {/* Experience Section */}
-            <section aria-label="Mohamed Fatta's Work Experience" className="mt-12 space-y-8">
-                <h2 className="text-2xl font-bold dark:text-white">Professional Experience</h2>
-                <div className="mt-4 space-y-4">
-                    {/* Add more semantic structure to job entries */}
-                    <article className="grid grid-cols-[80px_1fr] gap-4">
+            {/* Main content */}
+            <main className="max-w-6xl mx-auto px-4 pt-24 pb-12">
+                {/* Profile Section */}
+                <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm">
+                    <div className="grid gap-8 md:grid-cols-[180px_1fr] items-start">
                         <div className="flex justify-center">
-                            <a 
-                                href="https://www.linkedin.com/company/94841697/" 
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="NTT Data Morocco LinkedIn Page"
-                            >
-                                <img
-                                    alt="NTT Data Morocco Company Logo"
-                                    className="rounded-full h-min"
-                                    height={80}
-                                    src="/ntt_data_morocco_logo.jpeg"
-                                    width={80}
-                                    loading="lazy"
-                                />
-                            </a>
+                            <img
+                                alt="Mohamed Fatta - Software Developer"
+                                className="rounded-xl border-2 border-gray-100 dark:border-gray-700 w-[180px] h-[180px] object-cover"
+                                src="/profile_img.png"
+                                loading="eager"
+                            />
                         </div>
-                        <div className="grid gap-2">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <h3 className="text-lg font-semibold dark:text-white">Software Engineer</h3>
-                                    <p className="text-sm text-gray-700 dark:text-white">NTT DATA Morocco · Full-time</p>
-                                    <p className="text-sm text-gray-500 dark:text-white">Feb 2023 - Present · 1 yr 4 mos</p>
-                                    <p className="text-sm text-gray-500 dark:text-white">Morocco · Remote</p>
+                        <div className="space-y-6">
+                            <div className="space-y-2">
+                                <h1 className="text-3xl font-bold tracking-tight dark:text-white">
+                                    Mohamed Fatta
+                                </h1>
+                                <p className="text-lg text-gray-600 dark:text-gray-300">
+                                    Software Engineer
+                                </p>
+                                <div className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-300">
+                                    <address className="inline-flex items-center gap-2 not-italic">
+                                        <GmailIcon className="h-5 w-5" />
+                                        <a href="mailto:med3fata@gmail.com" className="hover:text-blue-600 transition-colors">
+                                            med3fata@gmail.com
+                                        </a>
+                                    </address>
+                                    <address className="inline-flex items-center gap-2 not-italic">
+                                        <PhoneIcon className="h-5 w-5 stroke-current" />
+                                        <a href="tel:+212638653350" className="hover:text-blue-600 transition-colors">
+                                            +212638653350
+                                        </a>
+                                    </address>
                                 </div>
                             </div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                                I played a key role in enhancing and optimizing a system used by Sky operators to manage and resolve client issues related to internet and CPEs,
-                                ensuring seamless internet connection and streaming services for customers. My contributions included:
+                            
+                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                A passionate Software Developer based in Morocco with extensive experience in building robust web applications 
+                                and cloud solutions.
                             </p>
-                            <ul className="space-y-2 text-sm text-gray-700 dark:text-white">
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Implemented an AWS serverless solution to handle the Users notifications using WEBSOCKETS.
-                                </li>
-
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Debugged Aws Lambda Functions.
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Created Unit tests for existing lambda functions, using Pytest and mock.
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Reduced aws lambda functions cold starts and execution time.
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Understanding and Following Event driven architecture.
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Utilised lambda power tuning tool to reduce cost and increase performance.
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Refactored a custom Engine Evaluator in Python,used as an AWS lambda Layer for multiple Lambda functions.
-                                </li>
-                            </ul>
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                            
+                            <div className="flex flex-wrap gap-2">
+                                {/* Keep your existing skills list but update the styling */}
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                    <AngularIcon className="h-4 w-4" />
+                                    Angular
+                                </div>
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                    <NestjsIcon className="h-4 w-4" />
+                                    NestJs
+                                </div>
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                    <TsIcon className="h-4 w-4" />
+                                    Ts
+                                </div>
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                    <JavaIcon className="h-4 w-4" />
+                                    Java
+                                </div>
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                    <MongoDbIcon className="h-4 w-4" />
+                                    MongoDb
+                                </div>
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                    <PostgresqlIcon className="h-4 w-4" />
+                                    Postgres
+                                </div>
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                                     <PythonIcon className="h-4 w-4" />
                                     Python
                                 </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                                     <AwsIcon className="h-4 w-4" />
                                     AWS
                                 </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                                     Lambda Function
                                 </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                                     DynamoDb
                                 </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                                     SQS
                                 </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
+                                <div className="text-xs inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                                     SNS
                                 </div>
                             </div>
                         </div>
-                    </article>
-                    <div className="grid grid-cols-[80px_1fr] gap-4 pt-5">
-                        <div className="flex justify-center">
-                            <a href="https://www.linkedin.com/company/2907050/" target="_blank">
+                    </div>
+                </section>
+
+                {/* Experience Section */}
+                <section className="mb-16">
+                    <h2 className="text-2xl font-bold mb-8 dark:text-white">Experience</h2>
+                    <div className="space-y-8">
+                        {/* NTT Data Experience */}
+                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm">
+                            <div className="grid gap-6 md:grid-cols-[80px_1fr]">
+                                <img
+                                    alt="NTT Data Logo"
+                                    className="w-20 h-20 rounded-xl"
+                                    src="/ntt_data_morocco_logo.jpeg"
+                                />
+                                <div className="space-y-4">
+                                    <div>
+                                        <h3 className="text-xl font-semibold dark:text-white">Software Engineer</h3>
+                                        <p className="text-gray-600 dark:text-gray-300">NTT DATA Morocco · Full-time</p>
+                                        <p className="text-gray-500">
+                                            {(() => {
+                                                const startDate = new Date('2023-02-01');
+                                                const currentDate = new Date();
+                                                const diffYears = currentDate.getFullYear() - startDate.getFullYear();
+                                                const diffMonths = currentDate.getMonth() - startDate.getMonth();
+                                                
+                                                let years = diffYears;
+                                                let months = diffMonths;
+                                                
+                                                if (diffMonths < 0) {
+                                                    years--;
+                                                    months += 12;
+                                                }
+                                                
+                                                const yearsText = years > 0 ? `${years} yr${years > 1 ? 's' : ''}` : '';
+                                                const monthsText = months > 0 ? `${months} mo${months > 1 ? 's' : ''}` : '';
+                                                const duration = [yearsText, monthsText].filter(Boolean).join(' ');
+                                                
+                                                return `Feb 2023 - Present · ${duration}`;
+                                            })()}
+                                        </p>
+                                    </div>
+                                    
+                                    {/* Project Sections */}
+                                    <div className="space-y-6">
+                                        {/* SKY OSS Project */}
+                                        <div className="space-y-3">
+                                            <h4 className="text-lg font-semibold dark:text-white">SKY OSS Project</h4>
+                                            <p className="text-gray-600 dark:text-gray-300 italic">AWS Serverless System</p>
+                                            <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Implemented an AWS serverless solution for Users notifications using WEBSOCKETS</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Debugged Aws Lambda Functions</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Created Unit tests for existing lambda functions, using Pytest and mock</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Reduced aws lambda functions cold starts and execution time</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Understanding and Following Event driven architecture</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Utilised lambda power tuning tool to reduce cost and increase performance</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Refactored a custom Engine Evaluator in Python, used as an AWS lambda Layer for multiple Lambda functions</span>
+                                                </li>
+                                            </ul>
+                                            <div className="flex flex-wrap gap-2 pt-2">
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Python</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">AWS</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Lambda Function</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">DynamoDB</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">SQS</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">SNS</span>
+                                            </div>
+                                        </div>
+
+                                        {/* OBO Project */}
+                                        <div className="space-y-3 pt-4 border-t dark:border-gray-700">
+                                            <h4 className="text-lg font-semibold dark:text-white">OBO Project</h4>
+                                            <p className="text-gray-600 dark:text-gray-300 italic">Distributed Microservices System</p>
+                                            <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Resolved complex concurrency issues in a distributed microservices architecture</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Implemented data consistency checks to prevent duplicate records across multiple MongoDB databases</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Optimized Apache Kafka message processing to ensure exactly-once delivery semantics</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Developed synchronization mechanisms using Spring Boot for distributed system coordination</span>
+                                                </li>
+                                                <li className="flex gap-2">
+                                                    <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                                    <span>Implemented transaction management strategies across multiple services and databases</span>
+                                                </li>
+                                            </ul>
+                                            <div className="flex flex-wrap gap-2 pt-2">
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Java</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Spring Boot</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Apache Kafka</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Azure</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">MongoDB</span>
+                                                <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Apache Avro</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* FY Computing Experience - Similar structure as above */}
+                        <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm">
+                            <div className="grid gap-6 md:grid-cols-[80px_1fr]">
                                 <img
                                     alt="Fy Computing Logo"
-                                    className="rounded-full h-min border #1e293b"
-                                    height={80}
+                                    className="w-20 h-20 rounded-xl"
                                     src="/fycomputing_logo.jpeg"
-                                    width={80}
                                 />
-                            </a>
-                        </div>
-                        <div className="grid gap-2">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <h3 className="text-lg font-semibold dark:text-white">Software Developer</h3>
-                                    <p className="text-sm text-gray-700 dark:text-white">FY COMPUTING · Full-time</p>
-                                    <p className="text-sm text-gray-500 dark:text-white">Oct 2021 - Mar 2023 · 1 yr 6 mos</p>
-                                    <p className="text-sm text-gray-500 dark:text-white">Rabat, Rabat-Salé-Kenitra, Morocco · Remote</p>
-                                </div>
-                            </div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                                Development of a multi tenant Saas platform for deploying - monitoring - scaling applications
-                                using cloud technologies (aws) :
-                            </p>
-                            <ul className="space-y-2 text-sm text-gray-700 dark:text-white">
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Implemented a solution for separating Data by organisation (multi tenancy).
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Implemented an IAM solution to add fine grained authorization rules.
-                                </li>
-                                <li>
-                                    <CheckIcon className="mr-2 inline-block h-4 w-4" />
-                                    Secure secrets by using hashicorp Vault.
-                                </li>
-                                <li>
-                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                    Implemented a custom Keycloak authentication flow.
-                                </li>
-                                <li>
-                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                    Automated updating Keycloak authorization policies based on realm roles.
-                                </li>
-                                <li>
-                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                    Implemented e2e test cases for deferent rest apis using robot framework.
-                                </li>
-                                <li>
-                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                    Perform Code Reviews - Provide Constructive Feedback - Identify Issues
-                                </li>
-                                <li>
-                                    <CheckIcon className='mr-2 inline-block h4 w-4'></CheckIcon>
-                                    Implemented a generic REST API for managing files across different cloud providers and local disks, based on configurable settings.
-                                </li>
-                            </ul>
-                            <div className="flex flex-wrap gap-2 mt-2">
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    <AngularIcon className="h-4 w-4" />
-                                    Angular
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    <NestjsIcon className="h-4 w-4" />
-                                    NestJs
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    <TsIcon className="h-4 w-4" />
-                                    Ts
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    <MongoDbIcon className="h-4 w-4" />
-                                    MongoDb
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    Keycloak
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    AWS S3
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    Robot Framework
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium ">
-                                    Docker
+                                <div className="space-y-4">
+                                    <div>
+                                        <h3 className="text-xl font-semibold dark:text-white">Software Developer</h3>
+                                        <p className="text-gray-600 dark:text-gray-300">FY COMPUTING · Full-time</p>
+                                        <p className="text-gray-500">Oct 2021 - Mar 2023 · 1 yr 6 mos</p>
+                                    </div>
+                                    
+                                    {/* Keep your existing responsibilities list but update styling */}
+                                    <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Implemented a solution for separating Data by organisation (multi tenancy)</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Implemented an IAM solution to add fine grained authorization rules</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Secure secrets by using hashicorp Vault</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Implemented a custom Keycloak authentication flow</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Automated updating Keycloak authorization policies based on realm roles</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Implemented e2e test cases for deferent rest apis using robot framework</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Perform Code Reviews - Provide Constructive Feedback - Identify Issues</span>
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" />
+                                            <span>Implemented a generic REST API for managing files across different cloud providers and local disks, based on configurable settings</span>
+                                        </li>
+                                    </ul>
+
+                                    <div className="flex flex-wrap gap-2 pt-4">
+                                        {/* Technologies used with updated styling */}
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            Angular
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            NestJs
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            Ts
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            MongoDb
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            Keycloak
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            AWS S3
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            Robot Framework
+                                        </span>
+                                        <span className="text-xs px-3 py-1 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                                            Docker
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Projects Section - Add if not present */}
-            <section aria-label="Mohamed Fatta's Portfolio Projects" className="mt-12 space-y-8">
-                <h2 className="text-2xl font-bold dark:text-white">Portfolio Projects</h2>
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="rounded-lg overflow-hidden shadow-md dark:shadow-none">
-                        <img
-                            alt="Project 1"
-                            className="w-full h-48 object-cover"
-                            height={400}
-                            src="/emailNotifyer.png"
-                            style={{
-                                aspectRatio: '600/400',
-                                objectFit: 'cover',
-                            }}
-                            width={600}
-                        />
-                        <div className="p-4 bg-white dark:bg-gray-950">
-                            <h3 className="text-lg font-semibold dark:text-white">EmailNotifyer</h3>
-                            <div className="flex flex-wrap gap-2 mt-2 text-xs ">
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                    <PythonIcon className="h-4 w-4" />
-                                    Python
+                {/* Projects Section */}
+                <section className="mb-20">
+                    <div className="mb-12 text-center">
+                        <h2 className="text-3xl font-bold mb-4 dark:text-white">
+                            Featured Projects
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                            Here are some of my recent projects that showcase my skills and experience in building scalable applications
+                        </p>
+                    </div>
+
+                    <div className="grid gap-10">
+                        {/* Project Card - Large Format */}
+                        <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                            <div className="grid md:grid-cols-2 gap-8 p-8">
+                                {/* Project Image Side */}
+                                <div className="relative group">
+                                    <div className="aspect-video w-full rounded-xl overflow-hidden relative">
+                                        <img
+                                            alt="EmailNotifyer Project"
+                                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                            src="/emailNotifyer.png"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    </div>
+                                    {/* Tech Stack Overlay */}
+                                    <div className="absolute bottom-[3.5rem] left-4 right-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <span className="text-xs px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full">
+                                            Python
+                                        </span>
+                                        <span className="text-xs px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full">
+                                            AWS
+                                        </span>
+                                        <span className="text-xs px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full">
+                                            Serverless
+                                        </span>
+                                    </div>
                                 </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                    AWS Api Gateway
-                                </div>
-                                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                    Lambda Function
-                                </div>
-                                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                    S3
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                    DynamoDb
-                                </div>
-                                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 font-medium ">
-                                    Amazon SES
+
+                                {/* Project Info Side */}
+                                <div className="flex flex-col justify-between">
+                                    <div className="space-y-6">
+                                        {/* Header */}
+                                        <div>
+                                            <div className="flex items-center justify-between mb-3">
+                                                <h3 className="text-2xl font-bold dark:text-white">Email Notifyer</h3>
+                                                <span className="px-3 py-1 text-sm bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full">
+                                                    Completed
+                                                </span>
+                                            </div>
+                                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                A serverless application to send emails based on AWS SES, lambda function, and DynamoDB.
+                                            </p>
+                                        </div>
+
+                                        {/* Key Features */}
+                                        <div>
+                                            <h4 className="text-lg font-semibold mb-3 dark:text-white">What i did</h4>
+                                            <ul className="space-y-2">
+                                                <li className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+                                                    <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>Create a Frontend using React to contact the Api gateway</span>
+                                                </li>
+                                                <li className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+                                                    <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>Provision the infrastructure using AWS CloudFormation</span>
+                                                </li>
+                                                <li className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+                                                    <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>Emails can be sent as a batch with a json file to S3 or by Rest API</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="flex gap-4 mt-8">
+                                        <a
+                                            href="https://github.com/medfata/emailNotifyer"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-fit flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300"
+                                        >
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                            </svg>
+                                            View Source
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                                A serverless application to send emails based on AWS SES
-                            </p>
-                            <div className="w-full flex justify-end">
-                            <button
-                            onClick={() => navigateTo("https://github.com/medfata/emailNotifyer")} 
-                            type="button" 
-                            className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 ">
-                                <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clipRule="evenodd"/>
-                                </svg>
-                            </button>
                         </div>
+                        
+                        {/* Redis Server Project Card */}
+                        <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                            <div className="grid md:grid-cols-2 gap-8 p-8">
+                                {/* Project Image Side */}
+                                <div className="relative group">
+                                    <div className="aspect-video w-full rounded-xl overflow-hidden relative">
+                                        <img
+                                            alt="Redis Server Project"
+                                            className="w-full h-full object-fit transform group-hover:scale-105 transition-transform duration-500"
+                                            src="/redis-icon.png"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    </div>
+                                    {/* Tech Stack Overlay */}
+                                    <div className="absolute bottom-[5rem] left-4 right-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <span className="text-xs px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full">
+                                            Java
+                                        </span>
+                                        <span className="text-xs px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full">
+                                            Socket Programming
+                                        </span>
+                                        <span className="text-xs px-3 py-1 bg-black/70 text-white backdrop-blur-sm rounded-full">
+                                            Redis Protocol
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* Project Info Side */}
+                                <div className="flex flex-col justify-between">
+                                    <div className="space-y-6">
+                                        {/* Header */}
+                                        <div>
+                                            <div className="flex items-center justify-between mb-3">
+                                                <h3 className="text-2xl font-bold dark:text-white">Redis Server Implementation</h3>
+                                                <span className="px-3 py-1 text-sm bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full">
+                                                    Completed
+                                                </span>
+                                            </div>
+                                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                                A lightweight Redis server implementation in Java that supports basic Redis commands and RESP protocol. Compatible with redis-cli for client connections.
+                                            </p>
+                                        </div>
+
+                                        {/* Key Features */}
+                                        <div>
+                                            <h4 className="text-lg font-semibold mb-3 dark:text-white">Key Features</h4>
+                                            <ul className="space-y-2">
+                                                <li className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+                                                    <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>RESP (REdis Serialization Protocol) implementation</span>
+                                                </li>
+                                                <li className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+                                                    <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>Support for basic Redis commands (SET/GET)</span>
+                                                </li>
+                                                <li className="flex items-start gap-2 text-gray-600 dark:text-gray-300">
+                                                    <svg className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                    <span>Compatible with standard redis-cli tool</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="flex gap-4 mt-8">
+                                        <a
+                                            href="https://github.com/medfata/build-ur-ownn-redis-server"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300"
+                                        >
+                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                                <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                            </svg>
+                                            View Source
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* Location Section - Add to emphasize Morocco connection */}
-            <section aria-label="Location" className="mt-12">
-                <h2 className="text-2xl font-bold dark:text-white">Location</h2>
-                <p className="text-gray-500 dark:text-gray-400 mt-4">
-                    Based in Morocco, available for both local and international opportunities.
-                </p>
-            </section>
-
-            {/* Dark mode toggle */}
-            <div className="fixed bottom-4 right-4 z-50">
-                <button
-                    onClick={toggleDarkMode}
-                    className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
-                    aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-                >
-                    {darkMode ? 
-                        <SunIcon className="h-6 w-6 dark:text-white" aria-hidden="true" /> : 
-                        <MoonIcon className="h-6 w-6" aria-hidden="true" />
-                    }
-                </button>
-            </div>
+                </section>
+            </main>
         </article>
     );
 }
