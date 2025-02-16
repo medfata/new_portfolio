@@ -33,9 +33,6 @@ export default function Portfolio() {
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
     }
-    const navigateTo = (url:string) => {
-        window.open(url, "_blank");
-    }
     return (
         <article className="min-h-screen bg-gray-50 dark:bg-gray-900">
             {/* Header with dark mode toggle */}
